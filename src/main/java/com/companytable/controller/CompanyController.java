@@ -22,7 +22,7 @@ public class CompanyController {
 	@Autowired
 	private CompanyService service;
 	
-	@GetMapping("viewCompany")
+	@GetMapping("/viewCompany")
 	public List<Company> viewCompanyList() {
 		return  service.viewList();
 	}
@@ -38,7 +38,7 @@ public class CompanyController {
 	}
 	
 	@DeleteMapping("/deleteCompany/{companyId}")
-	public ResponseEntity<Company> movieDelete(@PathVariable long companyId) {
+	public ResponseEntity<Company> deleteCompany(@PathVariable long companyId) {
 		return service.deleteById(companyId);
 	} 
 }
